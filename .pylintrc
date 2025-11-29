@@ -1,0 +1,4 @@
+[MASTER]
+load-plugins=pylint_django
+ignore=migrations
+django-settings-module=taskmanager.settings
