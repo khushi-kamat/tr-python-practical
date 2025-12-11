@@ -18,7 +18,7 @@ A simple Task Management API with a Python CLI tool, built using Django REST Fra
 
 ## API Endpoint Documentation
 ### 1. List & Create Tasks
-**Endpoint:** `/api/tasks/`  
+**Endpoint:** `/api/tasks/`
 **Methods:** `GET`, `POST`
 ### GET - List Tasks
 - Returns all tasks (newest first)
@@ -46,7 +46,7 @@ A simple Task Management API with a Python CLI tool, built using Django REST Fra
 
   ```
 ### 2. Retrieve, Update, or Delete a Task
-**Endpoint:** `/api/tasks/<id>/`  
+**Endpoint:** `/api/tasks/<id>/`
 **Methods:** `GET`, `PATCH`, `DELETE`
 ### GET - Retrieve Task
 - Get task details
@@ -87,7 +87,7 @@ A simple Task Management API with a Python CLI tool, built using Django REST Fra
   }
   ```
 ### 3. Mark Task as Complete
-**Endpoint:** `/api/tasks/<id>/complete/`  
+**Endpoint:** `/api/tasks/<id>/complete/`
 **Method:** `POST`
 - Sets task `status` to complete. Requires the task to have a `due_date`.
 - Example:
@@ -105,7 +105,7 @@ A simple Task Management API with a Python CLI tool, built using Django REST Fra
   }
   ```
 ### 4. Mark Task as Incomplete
-**Endpoint:** `/api/tasks/<id>/incomplete/`  
+**Endpoint:** `/api/tasks/<id>/incomplete/`
 **Method:** `POST`
 - Sets task `status` to incomplete.
 - Example:
@@ -127,52 +127,52 @@ A simple Task Management API with a Python CLI tool, built using Django REST Fra
 ### 1. List Tasks
 - List all tasks
   ```bash
-  python manage.py tasks list
+  python manage.py task list
   ```
 - List only completed tasks
   ```bash
-  python manage.py tasks list --status true
+  python manage.py task list --status true
   ```
 - List tasks with high priority
   ```bash
-  python manage.py tasks list --priority high
+  python manage.py task list --priority high
   ```
   **Note:** Tasks are displayed in batches of 50 (controlled by `BATCH_SIZE`).
 ### 2. Create a Task
 - Create a new task with title, description, priority, and due date
   ```bash
-  python manage.py tasks create --title "Code Review for Feature X" --description "Slides for client meeting" --priority high --due "2025-12-30 10:00"
+  python manage.py task create --title "Code Review" --description "Code Review for Feature X" --priority high --due "2025-12-30 10:00"
   ```
 - Create a task without description or due date
   ```bash
-  python manage.py tasks create --title "Code Review for Feature X"
+  python manage.py task create --title "Code Review for Feature X"
   ```
 ### 3. Update a Task
 - Update title, description, or priority of a task
   ```bash
-  python manage.py tasks update 3 --title "Code Review" --priority medium
+  python manage.py task update 3 --title "Code Review" --priority medium
   ```
 - Mark task as completed
   ```bash
-  python manage.py tasks update 3 --status true
+  python manage.py task update 3 --status true
   ```
 - Update due date
   ```bash
-  python manage.py tasks update 3 --due "2025-12-30 10:00"
+  python manage.py task update 3 --due "2025-12-30 10:00"
   ```
 ### 4. Delete a Task
 - Delete task by ID
   ```bash
-  python manage.py tasks delete 3
+  python manage.py task delete 3
   ```
 ### 5. Mark Task Complete / Incomplete
 - Mark a task as complete
   ```bash
-  python manage.py tasks complete 2
+  python manage.py task complete 2
   ```
 - Mark a task as incomplete
   ```bash
-  python manage.py tasks incomplete 2
+  python manage.py task incomplete 2
   ```
 
 ## Assumptions Made
